@@ -1,4 +1,4 @@
-package httpprxy
+package main
 
 import (
 	"flag"
