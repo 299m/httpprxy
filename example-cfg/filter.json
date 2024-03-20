@@ -1,5 +1,5 @@
 {
-  "Logdebug": false,
+  "Logdebug": true,
   "Whitelist": ["www.google.com", "www.bbc.com", "bbc.com", "google.com"],
   "Blacklist": []
 }
