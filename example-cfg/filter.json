@@ -1,5 +1,6 @@
 {
   "Logdebug": true,
-  "Whitelist": ["www.google.com", "www.bbc.com", "bbc.com", "google.com"],
-  "Blacklist": []
+  "Whitelist": [],
+  "Blacklist": [],
+  "WhitelistPorts": [80, 443]
 }

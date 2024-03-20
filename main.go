@@ -37,6 +37,7 @@ func main() {
 		"filter": filters,
 	}
 	util.ReadConfig(*basedir, cfg)
+	filter.NewFilter(proxy, filters)
 
 	log.Fatal(http.ListenAndServeTLS(":"+tlscfg.Port, tlscfg.Cert, tlscfg.Key, proxy))
 }
