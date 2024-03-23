@@ -1,0 +1,6 @@
+{
+  "Logdebug": true,
+  "Whitelist": ["www.aljazeera.com","aljazeera.com","www.google.com", "google.com"],
+  "Blacklist": [],
+  "WhitelistPorts": [80, 443]
+}

@@ -1,0 +1,6 @@
+{
+  "Cert": "$PROXY_CERT",
+  "Key":  "$PROXY_KEY",
+  "Port": "443",
+  "IsHttps": true
+}
