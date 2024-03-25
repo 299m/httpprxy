@@ -5,8 +5,8 @@ services:
     build: .
     image: 299m/core:httpprxy-1.0.0
     environment:
-      - PROXY_KEY=/certs/server.key
-      - PROXY_CERT=/certs/server-certs.crt
+      - PROXY_KEY=$PROXY_KEY
+      - PROXY_CERT=$PROXY_CERT
     ports:
       - "4043:443"
     volumes:
