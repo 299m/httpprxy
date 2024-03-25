@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/299m/util/util"
 	"github.com/elazarl/goproxy"
 	"httpprxy/filter"
@@ -38,6 +39,8 @@ func main() {
 	}
 	util.ReadConfig(*basedir, cfg)
 	filter.NewFilter(proxy, filters)
+
+	fmt.Println("Starting proxy on port "+tlscfg.Port, " with cert ", tlscfg.Cert, " and key ", tlscfg.Key)
 
 	log.Fatal(http.ListenAndServeTLS(":"+tlscfg.Port, tlscfg.Cert, tlscfg.Key, proxy))
 }
