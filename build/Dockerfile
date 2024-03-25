@@ -5,4 +5,4 @@ LABEL authors="299m"
 COPY ./config /config
 COPY ./bin /bin
 
-ENTRYPOINT ["httpprxy", "-cfgdir", "./config"]
+ENTRYPOINT ["./bin/httpprxy", "-cfgdir", "./config"]
