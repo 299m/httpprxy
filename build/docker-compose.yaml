@@ -4,7 +4,6 @@ services:
   httpprxy-restricted:
     build: .
     image: 299m/core:httpprxy-1.0.0
-    #    command: /bin/sh -c "/bin/data-breaks-front"
     environment:
       - PROXY_KEY=/certs/server.key
       - PROXY_CERT=/certs/server-certs.crt
