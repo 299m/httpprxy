@@ -1,7 +1,9 @@
 {
   "Logdebug": true,
   "Whitelist": [".*[\\.]aljazeera.com:443","aljazeera.com:443",".*[\\.]google.com:443", "google.com:443",".*[\\.]gstatic.com:443",
-            ".*[\\.]googleusercontent.com:443",".*[\\.]googleapis.com:443",".*[\\.]google-analytics.com:443"],
+            ".*[\\.]googleusercontent.com:443",".*[\\.]googleapis.com:443",".*[\\.]google-analytics.com:443",
+            ".*[\\.]googletagmanager.com:443",".*[\\.]cdn.cookielaw.org:443",".*[\\.]chartbeat.com:443",
+            ".*[\\.]a.pub.network:443",".*[\\.]recaptcha.net:443",".*[\\.]cdn.amplitude.com:443"],
   "Blacklist": [],
   "WhitelistPorts": [80, 443]
 }
