@@ -1,6 +1,6 @@
 {
   "Logdebug": true,
-  "Whitelist": ["www.aljazeera.com:443","aljazeera.com:443","www.google.com:443", "google.com:443","ssl.gstatic.com:443"],
+  "Whitelist": ["*.aljazeera.com:443","aljazeera.com:443","*.google.com:443", "google.com:443","*.gstatic.com:443"],
   "Blacklist": [],
   "WhitelistPorts": [80, 443]
 }

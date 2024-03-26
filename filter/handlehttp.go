@@ -42,14 +42,14 @@ func NewFilter(proxy *goproxy.ProxyHttpServer, filters *Config) *Filter {
 	}
 	if len(filters.Whitelist) > 0 {
 		for _, filter := range filters.Whitelist {
-			proxy.OnRequest(goproxy.DstHostIs(filter)).DoFunc(f.Allow)
-			proxy.OnRequest(goproxy.DstHostIs(filter)).HandleConnectFunc(f.AllowOnConnect)
+			proxy.OnRequest(goproxy.ReqHostMatches(regexp.MustCompile(filter))).DoFunc(f.Allow)
+			proxy.OnRequest(goproxy.ReqHostMatches(regexp.MustCompile(filter))).HandleConnectFunc(f.AllowOnConnect)
 		}
 		proxy.OnRequest().HandleConnectFunc(f.BlockOnConnect) //// FInal one blocks
 	} else {
 		for _, filter := range filters.Blacklist {
-			proxy.OnRequest(goproxy.DstHostIs(filter)).DoFunc(f.Block)
-			proxy.OnRequest(goproxy.DstHostIs(filter)).HandleConnectFunc(f.BlockOnConnect)
+			proxy.OnRequest(goproxy.ReqHostMatches(regexp.MustCompile(filter))).DoFunc(f.Block)
+			proxy.OnRequest(goproxy.ReqHostMatches(regexp.MustCompile(filter))).HandleConnectFunc(f.BlockOnConnect)
 		}
 		/// If we are blacklisting and it's not there, let it through
 	}
