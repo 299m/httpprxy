@@ -5,7 +5,6 @@ import (
 	"github.com/elazarl/goproxy"
 	"net/http"
 	"regexp"
-	"time"
 )
 
 type Config struct {
@@ -37,8 +36,12 @@ func NewFilter(proxy *goproxy.ProxyHttpServer, filters *Config) *Filter {
 		logdebug: filters.Logdebug,
 	}
 
+	f.LogDebug("Debug logging is enabled")
 	if filters.Logdebug {
+		proxy.Verbose = true
 		proxy.OnRequest().DoFunc(f.LogRequest)
+		proxy.OnRequest().HandleConnectFunc(f.LogConnect)
+		proxy.OnResponse().DoFunc(f.LogResponse)
 	}
 	if len(filters.Whitelist) > 0 {
 		for _, filter := range filters.Whitelist {
@@ -94,6 +97,15 @@ func (f *Filter) Allow(r *http.Request, ctx *goproxy.ProxyCtx) (*http.Request, *
 }
 
 func (f *Filter) LogRequest(r *http.Request, ctx *goproxy.ProxyCtx) (*http.Request, *http.Response) {
-	fmt.Println(time.Now(), ">", r.Host, r.RequestURI)
+	f.LogDebug(r.Host, r.RequestURI)
 	return r, nil
+}
+
+func (f *Filter) LogConnect(host string, ctx *goproxy.ProxyCtx) (*goproxy.ConnectAction, string) {
+	f.LogDebug(host, ctx.Req.RequestURI)
+	return nil, host
+}
+func (f *Filter) LogResponse(resp *http.Response, ctx *goproxy.ProxyCtx) *http.Response {
+	f.LogDebug("Response ", resp.Status, " for ", ctx.Req.Host, ctx.Req.RequestURI)
+	return nil
 }

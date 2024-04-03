@@ -1,5 +1,7 @@
 github.com/299m/util v0.0.0-20240319111501-7a5cbc8723f8 h1:rC2+gCjjF8/Y+wPREVmBduyDn3/ht8j5SZlzyH7strk=
 github.com/299m/util v0.0.0-20240319111501-7a5cbc8723f8/go.mod h1:c2ygI4rNB2QiYvAZDcQuYRJ/DkE0qY7U8tkkjL7NLek=
+github.com/299m/util v0.0.0-20240319151555-344f94ec44f8 h1:6pG/KATdhcNtWmmd+PgDYB8UEWY1E5Z8LBxo//wZB5g=
+github.com/299m/util v0.0.0-20240319151555-344f94ec44f8/go.mod h1:c2ygI4rNB2QiYvAZDcQuYRJ/DkE0qY7U8tkkjL7NLek=
 github.com/elazarl/goproxy v0.0.0-20231117061959-7cc037d33fb5 h1:m62nsMU279qRD9PQSWD1l66kmkXzuYcnVJqL4XLeV2M=
 github.com/elazarl/goproxy v0.0.0-20231117061959-7cc037d33fb5/go.mod h1:Ro8st/ElPeALwNFlcTpWmkr6IoMFfkjXAvTHpevnDsM=
 github.com/elazarl/goproxy/ext v0.0.0-20190711103511-473e67f1d7d2 h1:dWB6v3RcOy03t/bUadywsbyrQwCqZeNIEX6M1OtSZOM=
