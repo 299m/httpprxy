@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:23.10
 LABEL authors="299m"
 
 ## Copy in the config and bin dir
